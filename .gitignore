@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Secrets / local config
+.env
+
+# Runtime data (keep the folders, not the contents)
+uploads/*
+outputs/*
+logs/
+!uploads/.gitkeep
+!outputs/.gitkeep
+
+# Model weights are downloaded by download_model.py
+models/*.pt
+models/*.pth
+models/*.part
+!models/.gitkeep
+
+# Datasets
+dataset/
+datasets/
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
