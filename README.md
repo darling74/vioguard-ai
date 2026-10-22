@@ -1,4 +1,4 @@
-# VIOGUARD AI - Video Violence Detection
+# SentinelAI - AI Violence Detection in Videos
 
 A Flask web application that analyses an uploaded video with a **pretrained X3D-M 3D-CNN** and reports
 **VIOLENCE DETECTED / NON-VIOLENCE DETECTED**, a violence probability, a per-segment timeline, processing time and more.
@@ -198,11 +198,3 @@ docs/                  accuracy report, model verification, test report
 Model: *School Violence Detection: A Comparative Study of 3D CNN Architectures* (Nguyen, UIT-VNU-HCM, 2026) -
 `visionlab-ai/school-violence-detection-models`. Architecture: X3D (Feichtenhofer, CVPR 2020) via PyTorchVideo.
 Original project: Mandeep Kharb (MoBiLSTM, Kaggle RLVS dataset).
-
-
-## VIOGUARD AI interface changes
-- Simplified the page to focus on video upload, analysis progress, and results.
-- Updated the visible product name to **VIOGUARD AI**.
-- Preserved the result video, violence probability, confidence, duration, processing time, frame/segment counts, resolution/FPS, and segment timeline.
-- Added a short warning tone when the model classifies a video as violent. Some browsers block automatic sound after background processing; the result page then offers **Play warning sound**.
-- The warning is an alert for human review, not proof that violence occurred.
