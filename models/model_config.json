@@ -1,0 +1,39 @@
+
+{
+  "name": "x3d_m_violence_detection",
+  "display_name": "X3D-M Violence Detection",
+  "architecture": "x3d_m",
+  "source": {
+    "repo_id": "visionlab-ai/school-violence-detection-models",
+    "filename": "final/final_x3d_realtime.pt",
+    "revision": "main",
+    "page": "https://huggingface.co/visionlab-ai/school-violence-detection-models",
+    "expected_size_bytes": 12268364,
+    "sha256": "e833f69d"
+  },
+  "license_note": "Research and educational use only; verify model license.",
+  "classes": [
+    "Non-Violence",
+    "Violence"
+  ],
+  "violent_index": 1,
+  "preprocessing": {
+    "num_frames": 16,
+    "frame_size": 224,
+    "mean": [0.45, 0.45, 0.45],
+    "std": [0.225, 0.225, 0.225],
+    "scale": 255.0
+  },
+  "decision": {
+    "threshold": 0.4,
+    "aggregation": "max",
+    "topk": 2,
+    "min_consecutive": 1
+  },
+  "segmentation": {
+    "segment_seconds": 5.0,
+    "segment_overlap": 0.5,
+    "single_segment_up_to_seconds": 7.5,
+    "max_segments": 24
+  }
+}
