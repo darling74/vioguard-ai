@@ -1,28 +1,26 @@
-
 {
-  "name": "x3d_m_violence_detection",
-  "display_name": "X3D-M Violence Detection",
-  "architecture": "x3d_m",
+  "name": "final_x3d_realtime",
+  "display_name": "X3D-M (RWF-2000, 16-frame real-time)",
+  "architecture": "X3D-M (pytorchvideo.models.hub.x3d_m, 2-class head)",
   "source": {
     "repo_id": "visionlab-ai/school-violence-detection-models",
     "filename": "final/final_x3d_realtime.pt",
     "revision": "main",
     "page": "https://huggingface.co/visionlab-ai/school-violence-detection-models",
     "expected_size_bytes": 12268364,
-    "sha256": "e833f69d"
+    "sha256": "e833f69d110f167cad4a6c38d385564bdb2f6de63d246e45cb03ff9aa17f0349"
   },
-  "license_note": "Research and educational use only; verify model license.",
-  "classes": [
-    "Non-Violence",
-    "Violence"
-  ],
+  "license_note": "Hugging Face metadata tag says MIT, but the repository README says research / non-commercial use. Treat as research-only.",
+  "classes": ["non_violent", "violent"],
   "violent_index": 1,
   "preprocessing": {
     "num_frames": 16,
     "frame_size": 224,
+    "resize": "squash_bilinear",
+    "color_order": "RGB",
+    "scale": 255.0,
     "mean": [0.45, 0.45, 0.45],
-    "std": [0.225, 0.225, 0.225],
-    "scale": 255.0
+    "std": [0.225, 0.225, 0.225]
   },
   "decision": {
     "threshold": 0.4,
@@ -35,5 +33,10 @@
     "segment_overlap": 0.5,
     "single_segment_up_to_seconds": 7.5,
     "max_segments": 24
+  },
+  "reported_metrics": {
+    "dataset": "RWF-2000 validation split (400 clips), reported by the model authors",
+    "f1": 0.93,
+    "note": "Author-reported, used for model selection, NOT an independent test. Test-split results are not published."
   }
 }
