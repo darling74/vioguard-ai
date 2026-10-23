@@ -245,7 +245,7 @@ class ViolenceModel:
                 numpy_scalar = np._core.multiarray.scalar  # NumPy 2.x
             except AttributeError:
                 numpy_scalar = np.core.multiarray.scalar  # NumPy 1.x
-            with torch.serialization.safe_globals([numpy_scalar]):
+            with torch.serialization.safe_globals([numpy_scalar, np.dtype]):
                 ckpt = torch.load(self.weights_path, map_location="cpu", weights_only=True)
         except Exception as safe_exc:
             log.warning("Restricted checkpoint load failed (%s); retrying full load of SHA-256-verified checkpoint", safe_exc)
