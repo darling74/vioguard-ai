@@ -12,3 +12,4 @@ opencv-python-headless>=4.9,<6
 torch>=2.3,<3
 torchvision>=0.18,<1
 pytorchvideo==0.1.5         # provides the X3D-M architecture the checkpoint was trained with
+gunicorn
